@@ -1,17 +1,713 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-body {background-color:red;}
-p {color:blue;}
-</style>
+  <meta charset="UTF-8">
+
+  <!-- Mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- =========================
+       SEO
+  ========================== -->
+
+  <title>Brand Point | Makeup, Beauty & Cosmetics</title>
+
+  <meta
+    name="description"
+    content="Discover makeup, beauty tips, cosmetic guides and beauty inspiration at Brand Point."
+  >
+
+  <meta
+    name="keywords"
+    content="makeup, cosmetics, beauty, makeup tips, beauty products, makeup guide, skincare, makeup inspiration"
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <!-- Change this to your real website -->
+  <link rel="canonical" href="https://example.com/">
+
+  <!-- =========================
+       Open Graph
+  ========================== -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brand Point | Makeup & Beauty">
+  <meta
+    property="og:description"
+    content="Makeup guides, beauty tips and cosmetic inspiration from Brand Point."
+  >
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:site_name" content="Brand Point">
+
+  <!-- =========================
+       Structured Data
+  ========================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Brand Point",
+    "url": "https://example.com/",
+    "description": "Makeup, beauty and cosmetics website."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Brand Point",
+    "url": "https://example.com/"
+  }
+  </script>
+
+  <!-- =========================
+       CSS
+  ========================== -->
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      color: #444;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 75vh;
+      padding: 100px 25px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff4f7,
+          #fff
+        );
+    }
+
+    .hero-content {
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .hero-label {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      line-height: 1;
+      margin-bottom: 25px;
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 20px;
+      color: #666;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 14px 28px;
+
+      background: #111;
+      color: white;
+
+      border-radius: 8px;
+      font-weight: bold;
+
+      transition: 0.2s;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 25px;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      max-width: 700px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .card {
+      padding: 30px;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+
+      transition: 0.2s;
+      background: white;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .card-number {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #fafafa;
+    }
+
+    .about-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 25px;
+    }
+
+    .about p {
+      max-width: 800px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 100px 25px;
+      background: #111;
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #ccc;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0b0b0b;
+      color: #aaa;
+      padding: 40px 25px;
+      text-align: center;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 80px 20px;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .cta h2 {
+        font-size: 35px;
+      }
+
+    }
+
+  </style>
 </head>
+
 <body>
 
-<h1>hi hello my name is muhammed abdullah!</h1>
-<p> so i have made a website by <b>html</b> and <strong>follow up with css and javascript!</strong></p>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
+  <header>
+
+    <nav class="navbar">
+
+      <a href="#home" class="logo">
+        Brand Point
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="#home">Home</a>
+        </li>
+
+        <li>
+          <a href="#makeup">Makeup</a>
+        </li>
+
+        <li>
+          <a href="#beauty">Beauty</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section id="home" class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-label">
+          Brand Point
+        </div>
+
+        <h1>
+          Your Point For Makeup & Beauty
+        </h1>
+
+        <p>
+          Discover makeup inspiration, cosmetic guides,
+          beauty tips and useful information to help you
+          make better beauty choices.
+        </p>
+
+        <a
+          href="#makeup"
+          class="hero-button"
+        >
+          Explore Makeup
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAKEUP
+    ========================== -->
+
+    <section
+      id="makeup"
+      class="section"
+    >
+
+      <h2 class="section-title">
+        Makeup
+      </h2>
+
+      <p class="section-description">
+        Explore different areas of makeup and learn
+        more about products, techniques and beauty routines.
+      </p>
+
+
+      <div class="cards">
+
+        <article class="card">
+
+          <div class="card-number">
+            01
+          </div>
+
+          <h3>
+            Makeup Basics
+          </h3>
+
+          <p>
+            Learn about foundation, concealer, blush,
+            eyeshadow, lipstick and other makeup essentials.
+          </p>
+
+          <a href="#">
+            Learn More →
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="card-number">
+            02
+          </div>
+
+          <h3>
+            Makeup Guides
+          </h3>
+
+          <p>
+            Explore practical makeup guides and
+            step-by-step ideas for different occasions.
+          </p>
+
+          <a href="#">
+            View Guides →
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="card-number">
+            03
+          </div>
+
+          <h3>
+            Beauty Products
+          </h3>
+
+          <p>
+            Learn what different cosmetic products do
+            and what to consider before choosing them.
+          </p>
+
+          <a href="#">
+            Explore Products →
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BEAUTY
+    ========================== -->
+
+    <section
+      id="beauty"
+      class="section"
+    >
+
+      <h2 class="section-title">
+        Beauty & Inspiration
+      </h2>
+
+      <p class="section-description">
+        Useful beauty information designed to make
+        discovering makeup simpler.
+      </p>
+
+
+      <div class="cards">
+
+        <article class="card">
+
+          <div class="card-number">
+            01
+          </div>
+
+          <h3>
+            Beauty Tips
+          </h3>
+
+          <p>
+            Discover practical beauty tips and
+            routines that can fit into everyday life.
+          </p>
+
+          <a href="#">
+            Read Tips →
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="card-number">
+            02
+          </div>
+
+          <h3>
+            Cosmetic Guides
+          </h3>
+
+          <p>
+            Understand common cosmetic categories
+            and how they are generally used.
+          </p>
+
+          <a href="#">
+            Read Guides →
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="card-number">
+            03
+          </div>
+
+          <h3>
+            Makeup Inspiration
+          </h3>
+
+          <p>
+            Find ideas for creating different makeup
+            looks and experimenting with your style.
+          </p>
+
+          <a href="#">
+            Get Inspired →
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section
+      id="about"
+      class="about"
+    >
+
+      <div class="about-inner">
+
+        <h2 class="section-title">
+          About Brand Point
+        </h2>
+
+        <p>
+          Brand Point is a makeup and beauty website
+          focused on useful cosmetic information,
+          makeup guides, beauty inspiration and
+          easy-to-understand resources.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALL TO ACTION
+    ========================== -->
+
+    <section class="cta">
+
+      <h2>
+        Discover Your Beauty Point
+      </h2>
+
+      <p>
+        Explore makeup ideas, cosmetic information
+        and beauty guides from Brand Point.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 <strong>Brand Point</strong>.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    // Smooth scrolling for internal links
+
+    document.querySelectorAll(
+      'a[href^="#"]'
+    ).forEach(function(link) {
+
+      link.addEventListener(
+        "click",
+        function(event) {
+
+          const target =
+            document.querySelector(
+              link.getAttribute("href")
+            );
+
+          if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+              behavior: "smooth"
+            });
+
+          }
+
+        }
+      );
+
+    });
+
+  </script>
 
 </body>
 </html>
-
